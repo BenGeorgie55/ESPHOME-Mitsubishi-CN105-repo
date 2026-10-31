@@ -5,6 +5,8 @@ Some AI was used in this as assistance
 
 ## 1. Update Home Assistant, ESPHome and your add-ons
 
+A logic level shifter is sometimes recommended but it will function without as long as GPIO ppins are used instead of TX and RX on the ESP side.
+
 Before starting, make sure **Home Assistant, the ESPHome Device Builder add-on, and your other installed add-ons are fully updated to the latest stable versions**. Let the updates finish and complete any requested restarts before continuing. Use the updated Device Builder to compile and flash the controller.
 
 ## Why this guide exists
@@ -31,7 +33,7 @@ Treat the controller as an IoT device and follow current [IoT security best prac
 - A compatible Mitsubishi Electric indoor unit with a CN105 connector.
 - A five-position JST PA harness, commonly sold as a PAP-05V-S cable.
 - A UART interface with signal levels compatible with the ESP32-S3.
-- A USB data cable and access to your Wi-Fi network.
+- A  micro USB/ USB- C data cable and access to your Wi-Fi network.
 
 ![Example ESP32-S3 development board](images/esp32-s3-board.png)
 

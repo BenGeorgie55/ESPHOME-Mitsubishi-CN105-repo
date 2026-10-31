@@ -1,5 +1,8 @@
 # Mitsubishi CN105 ESPHome airconditioning guide
 
+Some AI was used in this as assistance 
+
+
 ## 1. Update Home Assistant, ESPHome and your add-ons
 
 Before starting, make sure **Home Assistant, the ESPHome Device Builder add-on, and your other installed add-ons are fully updated to the latest stable versions**. Let the updates finish and complete any requested restarts before continuing. Use the updated Device Builder to compile and flash the controller.

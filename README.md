@@ -28,6 +28,8 @@ Treat the controller as an IoT device and follow current [IoT security best prac
 
 ## What you need
 
+-Some idea and basic grasp of safety when working with electricity.
+
 - Soldering iron, flux, solder
 - Home Assistant with ESPHome Device Builder.
 - An ESP32-S3 board that matches the configuration, such as the board shown below.
@@ -35,6 +37,7 @@ Treat the controller as an IoT device and follow current [IoT security best prac
 - A five-position JST PA harness, commonly sold as a PAP-05V-S cable.
 - A UART interface with signal levels compatible with the ESP32-S3.
 - A  micro USB/ USB- C data cable and access to your Wi-Fi network.
+- 5v to 3.3v logic level shifter 
 
 ![Example ESP32-S3 development board](images/esp32-s3-board.png)
 
@@ -143,7 +146,7 @@ For a new controller, do the first flash before connecting it to the airconditio
 Saving the YAML alone does not change the device. You must compile and install it. Later updates can use **Install** and the wireless option once the controller is online and its OTA settings match the running firmware. See [ESPHome's setup guide](https://esphome.io/install/getting-started/).
 
 ## 5. Find CN105 and connect the controller
-
+Please understand that although you are not working directly with 120/240v, you are interacting with components very close to high voltages.
 Isolate the airconditioning unit's electrical supply before opening it. These photos show one example unit. Cover arrangements and board locations vary, so check your model's service documentation.
 
 ### Find the electronics compartment

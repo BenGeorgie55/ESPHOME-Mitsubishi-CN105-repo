@@ -6,6 +6,7 @@ Some AI was used in this as assistance
 ## 1. Update Home Assistant, ESPHome and your add-ons
 
 A logic level shifter is sometimes recommended but it will function without as long as GPIO ppins are used instead of TX and RX on the ESP side.
+The logic level shifter must be placed inline with tx and rx, the mitsibishi tx rx is data 5v while the ESP is only meant to accept 3.3v data. I havent an issue but its possible the chip dies over time.
 
 Before starting, make sure **Home Assistant, the ESPHome Device Builder add-on, and your other installed add-ons are fully updated to the latest stable versions**. Let the updates finish and complete any requested restarts before continuing. Use the updated Device Builder to compile and flash the controller.
 

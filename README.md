@@ -255,6 +255,22 @@ Room Temperature and Target Temperature copy values from the climate entity. The
 
 There is no scheduled weekly restart in this configuration. Wi-Fi and safe-mode recovery settings still apply.
 
+OPTIONAL:
+100% Local Mitsubishi CN105 setup
+
+This setup keeps everyday AC control on your home network. Home Assistant talks directly to the ESP32 over Wi-Fi, and the ESP32 talks to the Mitsubishi indoor unit over the CN105 cable. The AC can be controlled from Home Assistant during an internet outage as long as your local network and Home Assistant are running.
+Install the CN105 and ESP32 component 
+1. Download the MitsubishiCN105ESPHome ZIP from https://github.com/echavet/MitsubishiCN105ESPHome and extract it 
+2. Copy the entire components/cn105 folder into local-components beside your ESPHome device YAML files. If you use Samba, you can drag the whole folder across in Files/ Finder. The final path should be esphome/local-components/cn105/climate.py.
+3. Replace the GitHub external_components block in each device config YAML with the block below. All three controllers can share the same folder.
+external_components:
+  - source:
+      type: local
+      path: local-components
+    components: [cn105]
+4. Keep platform: cn105 under climate: and run Validate in ESPHome Device Builder.
+ESPHome now reads CN105 from disk instead of fetching it from GitHub. You can leave your existing firmware running and use the local copy on your next build. Day-to-day operation is fully local. A fresh build can still need internet access to download ESPHome’s toolchain or other build dependencies.
+
 ## Example Home Assistant dashboard
 
 ![Example Home Assistant airconditioning dashboard with device names blacked out](images/home-assistant-dashboard-redacted.png)
